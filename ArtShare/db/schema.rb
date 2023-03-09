@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190731) do
   end
 
   create_table "artworks", force: :cascade do |t|
-    t.string "title"
-    t.string "image_url"
+    t.string "title", null: false
+    t.string "image_url", null: false
     t.bigint "artist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_190731) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "username", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["username"], name: "index_users_on_username", unique: true

@@ -7,5 +7,8 @@ class CreateArtworkShares < ActiveRecord::Migration[7.0]
     end
 
     add_index :artwork_shares, [:artwork_id, :viewer_id], unique: true
+    change_column :users, :username, :string,  null:false
+    change_column :artworks, :title, :string,  null:false
+    change_column :artworks, :image_url, :string,  null:false
   end
 end
