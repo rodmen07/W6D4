@@ -24,8 +24,3 @@ class User < ApplicationRecord
   through: :artwork_shares,
   source: :artwork
 end
-
-SELECT *
-FROM artwork_shares
-JOIN users ON users.id = viewer_id
-JOIN artworks ON artwork_id = artworks.id

@@ -20,7 +20,7 @@ class Artwork < ApplicationRecord
 
   has_many :artwork_shares,
   foreign_key: :artwork_id,
-  class_name: :Artwork,
+  class_name: :ArtworkShare,
   primary_key: :id
 
   has_many :shared_viewers,
