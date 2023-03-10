@@ -702,3 +702,23 @@ Processing by ArtworkSharesController#destroy as */*
 Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 2591)
 
 
+Started GET "/users" for ::1 at 2023-03-09 17:16:49 -0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 6.4ms | ActiveRecord: 9.5ms | Allocations: 6955)
+
+
+Started GET "/users/1/artworks" for ::1 at 2023-03-09 17:17:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/artworks"):
+  
+Started GET "/users/1/artworks" for ::1 at 2023-03-09 17:18:25 -0800
+Processing by ArtworksController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/controllers/artworks_controller.rb:3:in `index'
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 4.7ms | Allocations: 6026)
+
+

@@ -1,6 +1,8 @@
 class ArtworksController < ApplicationController
     def index
         render json: Artwork.all
+        # if params[:user_id]
+        # Artwork.artworks_for_user_id
     end
 
     def create
@@ -23,28 +25,28 @@ class ArtworksController < ApplicationController
     end
 
     def update
-        
+
         art = Artwork.find_by(id: params[:id])
         if art.nil?
             render plain: 'art doesnt exist'
         else
             art.update!(artwork_params)
             render json: art
-        end  
+        end
     end
-    
+
     def destroy
         art = Artwork.find_by(id: params[:id])
         if art.nil?
             render plain: 'art doesnt exist'
             # render json: art.errors.full_messages, status: :unprocessable_entity
-        else 
+        else
             art.delete
             render json: Artwork.all
         end
     end
 
-    private 
+    private
 
     def artwork_params
 
